@@ -16,7 +16,7 @@
 	  <h3>Pagina di Ricerca</h3>
 	</div>
 
-      	<form class="form-horizontal" action="ExecuteSearchMunicipioServlet" method="post">
+      	<form class="form-horizontal" action="${pageContext.request.contextPath}/municipio/ExecuteSearchMunicipioServlet" method="post">
       		<div class="form-group">
       			<label class="control-label col-sm-2" for="descrizioneInputId">Descrizione:</label>
 	    		<div class="col-sm-4">
@@ -38,8 +38,8 @@
   			
   			<div class="form-group">        
 		      <div class="col-sm-offset-2 col-sm-10">
-		        <button type="submit" class="btn btn-primary btn-md">Effetua Ricerca</button>
-		        <a href="" class="btn btn-primary btn-md">Inserisci Nuovo Elemento</a>
+		        <button type="submit" class="btn btn-primary btn-md">Effettua Ricerca</button>
+		        <a href="${pageContext.request.contextPath}/municipio/PrepareInsertMunicipioServlet" class="btn btn-primary btn-md">Inserisci Nuovo Elemento</a>
 		      </div>
 		    </div>
 		</form>

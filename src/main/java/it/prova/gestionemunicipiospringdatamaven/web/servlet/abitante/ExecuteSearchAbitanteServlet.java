@@ -17,7 +17,7 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import it.prova.gestionemunicipiospringdatamaven.model.Abitante;
 import it.prova.gestionemunicipiospringdatamaven.service.abitante.AbitanteService;
 
-@WebServlet("/ExecuteSearchAbitanteServlet")
+@WebServlet("/abitante/ExecuteSearchAbitanteServlet")
 public class ExecuteSearchAbitanteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

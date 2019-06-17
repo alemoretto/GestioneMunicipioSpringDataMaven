@@ -51,8 +51,6 @@ public class ExecuteInsertMunicipioServlet extends HttpServlet {
 			return;
 		}
 
-		
-		
 		Municipio municipioDaInserire = MunicipioDTO.buildMunicipioInstance(municipioDTO);
 
 		municipioService.inserisciNuovo(municipioDaInserire);

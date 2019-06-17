@@ -9,7 +9,10 @@ import org.springframework.data.repository.query.QueryByExampleExecutor;
 
 import it.prova.gestionemunicipiospringdatamaven.model.Abitante;
 
-public interface AbitanteRepository extends CrudRepository<Abitante, Long>,QueryByExampleExecutor <Abitante> {
+public interface AbitanteRepository extends CrudRepository<Abitante, Long>, QueryByExampleExecutor<Abitante> {
+
+	@Query("from Abitante a JOIN FETCH a.Municipio where a.id = ?1")
+	Abitante findOneEager(Long id);
 
 	// la query viene costruita in automatico!!!
 	List<Abitante> findByNome(String name);
@@ -27,9 +30,9 @@ public interface AbitanteRepository extends CrudRepository<Abitante, Long>,Query
 	@Query("from Abitante p where p.nome like ?1%")
 	List<Abitante> findByNomeStartsWith(String token);
 
-	//se voglio un caricamento EAGER per esempio by cognome
-	//anche se i caricamenti EAGER conviene scriverli in JPQL
+	// se voglio un caricamento EAGER per esempio by cognome
+	// anche se i caricamenti EAGER conviene scriverli in JPQL
 	@EntityGraph(attributePaths = { "municipio" })
-	List <Abitante> findByCognome(String cognome);
+	List<Abitante> findByCognome(String cognome);
 
 }

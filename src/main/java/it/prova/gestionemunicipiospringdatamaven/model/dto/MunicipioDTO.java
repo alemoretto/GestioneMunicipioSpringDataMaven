@@ -14,6 +14,9 @@ public class MunicipioDTO {
 	private String codice;
 	private String ubicazione;
 
+	public MunicipioDTO() {
+	}
+
 	public MunicipioDTO(Long id, String descrizione, String codice, String ubicazione) {
 		this(descrizione, codice, ubicazione);
 		this.id = id;

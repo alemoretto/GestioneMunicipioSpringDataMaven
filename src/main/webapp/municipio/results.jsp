@@ -20,9 +20,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>
 					<th>Descrizione</th>
-					<th>Codice</th>
 					<th>Ubicazione</th>
 					<th>Action</th>
 				</tr>
@@ -30,9 +28,7 @@
 			<tbody>
 				<c:forEach items="${listaMunicipi }" var="municipioItem">
 					<tr>
-						<td>${municipioItem.id }</td>
 						<td>${municipioItem.descrizione }</td>
-						<td>${municipioItem.codice }</td>
 						<td>${municipioItem.ubicazione }</td>
 						<td><a
 							href="${pageContext.request.contextPath}/municipio/ExecuteDettaglioMunicipioServlet?idMunicipio=${municipioItem.id }"

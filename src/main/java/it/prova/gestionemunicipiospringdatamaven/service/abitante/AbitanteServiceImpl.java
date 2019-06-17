@@ -38,6 +38,12 @@ public class AbitanteServiceImpl implements AbitanteService {
 
 	}
 
+	@Transactional(readOnly = true)
+	public Abitante caricaSingoloAbitanteEager(Long id) {
+		return abitanteRepository.findOneEager(id);
+
+	}
+	
 	@Transactional
 	public void aggiorna(Abitante abitanteInstance) {
 		abitanteRepository.save(abitanteInstance);

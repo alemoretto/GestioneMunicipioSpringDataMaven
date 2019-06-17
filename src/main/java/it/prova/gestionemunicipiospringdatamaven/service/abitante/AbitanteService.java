@@ -10,6 +10,8 @@ public interface AbitanteService {
 
 	public Abitante caricaSingoloAbitante(Long id);
 
+	public Abitante caricaSingoloAbitanteEager(Long id);
+
 	public void aggiorna(Abitante abitanteInstance);
 
 	public void inserisciNuovo(Abitante abitanteInstance);

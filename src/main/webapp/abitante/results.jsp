@@ -20,26 +20,22 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>
 					<th>Nome</th>
 					<th>Cognome</th>
-					<th>Eta</th>
-					<th>Residenza</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${listaAbitanti }" var="abitanteItem">
 					<tr>
-						<td>${abitanteItem.id }</td>
 						<td>${abitanteItem.nome }</td>
 						<td>${abitanteItem.cognome }</td>
-						<td>${abitanteItem.eta }</td>
-						<td>${abitanteItem.residenza }</td>
 						<td><a
-							href="ExecuteDettaglioAbitanteServlet?idMunicipio=${abitanteItem.id }"
+							href="${pageContext.request.contextPath}/abitante/ExecuteDettaglioAbitanteServlet?idAbitante=${abitanteItem.id }"
 							class="btn btn-info">Dettaglio</a> <a
-							href="PrepareModificaAbitanteServlet?idMunicipio=${abitanteItem.id }"
-							class="btn btn-info">Modifica</a></td>
+							href="PrepareModificaAbitanteServlet?idAbitante=${abitanteItem.id }"
+							class="btn btn-info">Modifica</a> <a
+							href="${pageContext.request.contextPath}/abitante/PrepareEliminaAbitanteServlet?idAbitante=${abitanteItem.id }"
+							class="btn btn-info">Elimina</a></td>
 					</tr>
 				</c:forEach>
 

@@ -15,7 +15,7 @@
     <div class="page-header">
 	  <h3>Pagina di Ricerca</h3>
 	</div>
-      	<form class="form-horizontal" action="ExecuteSearchAbitanteServlet" method="post">
+      	<form class="form-horizontal" action="${pageContext.request.contextPath}/abitante/ExecuteSearchAbitanteServlet" method="post">
       		<div class="form-group">
       			<label class="control-label col-sm-2" for="nomeInputId">Nome:</label>
 	    		<div class="col-sm-4">
@@ -44,6 +44,7 @@
   			<div class="form-group">        
 		      <div class="col-sm-offset-2 col-sm-10">
 		        <button type="submit" class="btn btn-primary btn-md">Effettua Ricerca</button>
+		        <!--  <a href="${pageContext.request.contextPath}/abitante/PrepareInsertAbitanteServlet" class="btn btn-primary btn-md">Inserisci Nuovo Elemento</a> -->
 		        <a href="PrepareInsertAbitanteServlet" class="btn btn-primary btn-md">Inserisci Nuovo Elemento</a>
 		      </div>
 		    </div>
