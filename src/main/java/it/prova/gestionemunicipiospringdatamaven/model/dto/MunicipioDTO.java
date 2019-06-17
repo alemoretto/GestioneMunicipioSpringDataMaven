@@ -1,5 +1,10 @@
 package it.prova.gestionemunicipiospringdatamaven.model.dto;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+
 import it.prova.gestionemunicipiospringdatamaven.model.Municipio;
 
 public class MunicipioDTO {
@@ -21,7 +26,7 @@ public class MunicipioDTO {
 		this.ubicazione = ubicazione;
 	}
 
-	public static Municipio buildMunicipio(MunicipioDTO municipioDTO) {
+	public static Municipio buildMunicipioInstance(MunicipioDTO municipioDTO) {
 
 		Municipio municipio = new Municipio(municipioDTO.getDescrizione(), municipioDTO.getCodice(),
 				municipioDTO.getUbicazione());
@@ -33,7 +38,7 @@ public class MunicipioDTO {
 		return municipio;
 	}
 
-	public static MunicipioDTO buildMunicipioDTO(Municipio municipio) {
+	public static MunicipioDTO buildMunicipioDTOInstance(Municipio municipio) {
 
 		MunicipioDTO municipioDTO = new MunicipioDTO(municipio.getDescrizione(), municipio.getCodice(),
 				municipio.getUbicazione());
@@ -43,6 +48,25 @@ public class MunicipioDTO {
 		}
 
 		return municipioDTO;
+	}
+
+	public Map<String, String> validate() {
+
+		Map<String, String> validazione = new HashMap<String, String>();
+
+		if (StringUtils.isEmpty(this.descrizione)) {
+			validazione.put("descrizioneInput", "Attenzione! Il campo Descrizione è obbligatorio");
+		}
+
+		if (StringUtils.isEmpty(this.codice)) {
+			validazione.put("codiceInput", "Attenzione! Il campo Codice è obbligatorio");
+		}
+
+		if (StringUtils.isEmpty(this.ubicazione)) {
+			validazione.put("ubicazioneInput", "Attenzione! Il campo Ubicazione è obbligatorio");
+		}
+
+		return validazione;
 	}
 
 	public Long getId() {

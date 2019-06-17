@@ -35,7 +35,7 @@
 				</c:if> 
 				<div class="col-sm-4">
 					<input class="form-control" type="text" id="descrizioneInputId"
-						name="descrizioneInput" value="${municipioDTO.descrizioneInput}">
+						name="descrizioneInput" value="${municipioDTO.descrizione}">
 				<div id="nomeInputErrorId" style="display: none; color: red"></div>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 				</c:if> 
 				<div class="col-sm-4">
 					<input class="form-control" type="text" id="codiceInputId"
-						name="codiceInput" value="${municipioDTO.codiceInput}">
+						name="codiceInput" value="${municipioDTO.codice}">
 				<div id="codiceInputErrorId" style="display: none; color: red"></div>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 				</c:if> 
 				<div class="col-sm-4">
 					<input class="form-control" type="text" id="ubicazioneInputId"
-						name="ubicazioneInput" value="${municipioDTO.ubicazioneInput}">
+						name="ubicazioneInput" value="${municipioDTO.ubicazione}">
 				<div id="ubicazioneInputErrorId" style="display: none; color: red"></div>
 				</div>
 			</div>
