@@ -22,8 +22,4 @@ public class PrepareInsertMunicipioServlet extends HttpServlet {
 		request.getRequestDispatcher("/municipio/inserisciNuovoMunicipio.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-	}
-
 }

@@ -35,10 +35,12 @@
 						<td>${municipioItem.codice }</td>
 						<td>${municipioItem.ubicazione }</td>
 						<td><a
-							href="ExecuteDettaglioMunicipioServlet?idMunicipio=${municipioItem.id }"
+							href="${pageContext.request.contextPath}/municipio/ExecuteDettaglioMunicipioServlet?idMunicipio=${municipioItem.id }"
 							class="btn btn-info">Dettaglio</a> <a
-							href="PrepareModificaMunicipioServlet?idMunicipio=${municipioItem.id }"
-							class="btn btn-info">Modifica</a></td>
+							href="${pageContext.request.contextPath}/municipio/PrepareModificaMunicipioServlet?idMunicipio=${municipioItem.id }"
+							class="btn btn-info">Modifica</a> <a
+							href="${pageContext.request.contextPath}/municipio/PrepareEliminaMunicipioServlet?idMunicipio=${municipioItem.id }"
+							class="btn btn-info">Elimina</a></td>
 					</tr>
 				</c:forEach>
 

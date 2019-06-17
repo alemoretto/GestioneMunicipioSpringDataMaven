@@ -28,6 +28,11 @@ public class MunicipioServiceImpl implements MunicipioService {
 		return municipioRepository.findOne(id);
 	}
 
+	@Transactional(readOnly = true)
+	public Municipio caricaSingoloMunicipioEager(Long id) {
+		return municipioRepository.findOneEager(id);
+	}
+	
 	@Transactional
 	public void aggiorna(Municipio municipioInstance) {
 		municipioRepository.save(municipioInstance);

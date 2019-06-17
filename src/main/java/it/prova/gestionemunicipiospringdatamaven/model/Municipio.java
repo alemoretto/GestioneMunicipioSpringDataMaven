@@ -26,6 +26,11 @@ public class Municipio  {
 	public Municipio() {
 	}
 
+	public Municipio(Long id) {
+		super();
+		this.id = id;
+	}
+	
 	public Municipio(String descrizione, String codice, String ubicazione) {
 		super();
 		this.descrizione = descrizione;

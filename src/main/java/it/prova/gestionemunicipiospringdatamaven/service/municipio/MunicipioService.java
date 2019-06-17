@@ -10,6 +10,8 @@ public interface MunicipioService {
 
 	public Municipio caricaSingoloMunicipio(Long id);
 
+	public Municipio caricaSingoloMunicipioEager(Long id);
+
 	public void aggiorna(Municipio municipioInstance);
 
 	public void inserisciNuovo(Municipio municipioInstance);

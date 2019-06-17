@@ -16,8 +16,8 @@ import it.prova.gestionemunicipiospringdatamaven.model.Municipio;
 import it.prova.gestionemunicipiospringdatamaven.model.dto.MunicipioDTO;
 import it.prova.gestionemunicipiospringdatamaven.service.municipio.MunicipioService;
 
-@WebServlet("/municipio/ExecuteInsertMunicipioServlet")
-public class ExecuteInsertMunicipioServlet extends HttpServlet {
+@WebServlet("/municipio/ExecuteModificaMunicipioServlet")
+public class ExecuteModificaMunicipioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
@@ -29,7 +29,7 @@ public class ExecuteInsertMunicipioServlet extends HttpServlet {
 		SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
 	}
 
-	public ExecuteInsertMunicipioServlet() {
+	public ExecuteModificaMunicipioServlet() {
 		super();
 	}
 
@@ -40,22 +40,23 @@ public class ExecuteInsertMunicipioServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		MunicipioDTO municipioDTO = new MunicipioDTO(request.getParameter("descrizioneInput"),
+		Long idMunicipio = Long.parseLong(request.getParameter("idInput"));
+		MunicipioDTO municipioDTO = new MunicipioDTO(idMunicipio,request.getParameter("descrizioneInput"),
 				request.getParameter("codiceInput"), request.getParameter("ubicazioneInput"));
 
 		if (!municipioDTO.validate().isEmpty()) {
 			request.setAttribute("municipioDTO", municipioDTO);
 			request.setAttribute("messaggiDiErrore", municipioDTO.validate());
-			request.getRequestDispatcher("/municipio/inserisciNuovoMunicipio.jsp").forward(request, response);
+			request.getRequestDispatcher("/municipio/modificaMunicipio.jsp").forward(request, response);
 
 			return;
 		}
 
+		Municipio municipioOld = municipioService.caricaSingoloMunicipioEager(idMunicipio); 
+		Municipio municipioAggiornato = MunicipioDTO.buildMunicipioInstance(municipioDTO);
+		municipioAggiornato.setAbitanti(municipioOld.getAbitanti());
 		
-		
-		Municipio municipioDaInserire = MunicipioDTO.buildMunicipioInstance(municipioDTO);
-
-		municipioService.inserisciNuovo(municipioDaInserire);
+		municipioService.aggiorna(municipioAggiornato);
 
 		response.sendRedirect(request.getContextPath() + "/municipio/SendRedirectMunicipioServlet");
 

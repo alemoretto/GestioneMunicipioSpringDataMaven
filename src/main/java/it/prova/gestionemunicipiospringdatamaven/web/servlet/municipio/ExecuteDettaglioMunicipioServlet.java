@@ -16,8 +16,8 @@ import it.prova.gestionemunicipiospringdatamaven.model.Municipio;
 import it.prova.gestionemunicipiospringdatamaven.model.dto.MunicipioDTO;
 import it.prova.gestionemunicipiospringdatamaven.service.municipio.MunicipioService;
 
-@WebServlet("/municipio/ExecuteInsertMunicipioServlet")
-public class ExecuteInsertMunicipioServlet extends HttpServlet {
+@WebServlet("/municipio/ExecuteDettaglioMunicipioServlet")
+public class ExecuteDettaglioMunicipioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
@@ -29,36 +29,18 @@ public class ExecuteInsertMunicipioServlet extends HttpServlet {
 		SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
 	}
 
-	public ExecuteInsertMunicipioServlet() {
+	public ExecuteDettaglioMunicipioServlet() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+		Municipio municipioDaVisualizzare = municipioService.caricaSingoloMunicipio(Long.parseLong(request.getParameter("idMunicipio")));
+		MunicipioDTO municipioDTO = MunicipioDTO.buildMunicipioDTOInstance(municipioDaVisualizzare);
 
-		MunicipioDTO municipioDTO = new MunicipioDTO(request.getParameter("descrizioneInput"),
-				request.getParameter("codiceInput"), request.getParameter("ubicazioneInput"));
-
-		if (!municipioDTO.validate().isEmpty()) {
-			request.setAttribute("municipioDTO", municipioDTO);
-			request.setAttribute("messaggiDiErrore", municipioDTO.validate());
-			request.getRequestDispatcher("/municipio/inserisciNuovoMunicipio.jsp").forward(request, response);
-
-			return;
-		}
-
-		
-		
-		Municipio municipioDaInserire = MunicipioDTO.buildMunicipioInstance(municipioDTO);
-
-		municipioService.inserisciNuovo(municipioDaInserire);
-
-		response.sendRedirect(request.getContextPath() + "/municipio/SendRedirectMunicipioServlet");
-
+		request.setAttribute("municipioDTO", municipioDTO);
+		request.getRequestDispatcher("/municipio/dettaglioMunicipio.jsp").forward(request, response);
 	}
 
 }
