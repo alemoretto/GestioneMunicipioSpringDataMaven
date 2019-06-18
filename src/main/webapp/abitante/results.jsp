@@ -32,7 +32,7 @@
 						<td><a
 							href="${pageContext.request.contextPath}/abitante/ExecuteDettaglioAbitanteServlet?idAbitante=${abitanteItem.id }"
 							class="btn btn-info">Dettaglio</a> <a
-							href="PrepareModificaAbitanteServlet?idAbitante=${abitanteItem.id }"
+							href="${pageContext.request.contextPath}/abitante/PrepareModificaAbitanteServlet?idAbitante=${abitanteItem.id }"
 							class="btn btn-info">Modifica</a> <a
 							href="${pageContext.request.contextPath}/abitante/PrepareEliminaAbitanteServlet?idAbitante=${abitanteItem.id }"
 							class="btn btn-info">Elimina</a></td>

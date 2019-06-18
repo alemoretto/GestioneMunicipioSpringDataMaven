@@ -20,9 +20,7 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>
 					<th>Descrizione</th>
-					<th>Codice</th>
 					<th>Ubicazione</th>
 					<th>Action</th>
 				</tr>

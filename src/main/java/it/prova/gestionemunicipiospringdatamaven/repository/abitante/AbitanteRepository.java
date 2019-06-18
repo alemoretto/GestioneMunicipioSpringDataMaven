@@ -11,7 +11,7 @@ import it.prova.gestionemunicipiospringdatamaven.model.Abitante;
 
 public interface AbitanteRepository extends CrudRepository<Abitante, Long>, QueryByExampleExecutor<Abitante> {
 
-	@Query("from Abitante a JOIN FETCH a.Municipio where a.id = ?1")
+	@Query("SELECT a from Abitante a JOIN FETCH a.municipio where a.id = ?1")
 	Abitante findOneEager(Long id);
 
 	// la query viene costruita in automatico!!!

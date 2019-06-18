@@ -20,7 +20,7 @@ import com.google.gson.JsonObject;
 import it.prova.gestionemunicipiospringdatamaven.model.Municipio;
 import it.prova.gestionemunicipiospringdatamaven.service.municipio.MunicipioService;
 
-@WebServlet("/SearchMunicipioAjaxServlet")
+@WebServlet("/municipio/SearchMunicipioAjaxServlet")
 public class SearchMunicipioAjaxServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

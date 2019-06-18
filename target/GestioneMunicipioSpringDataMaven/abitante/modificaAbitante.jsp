@@ -30,7 +30,7 @@
 		<form class="form-horizontal" action="ExecuteModificaAbitanteServlet"
 			method="post"> 
 			
-			<input type="hidden" name="idInput" value="${abitanteDTO.id}">
+<%-- 			<input type="hidden" name="idInput" value="${abitanteDTO.id}"> --%>
 			
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="nomeInputId">Nome:</label>

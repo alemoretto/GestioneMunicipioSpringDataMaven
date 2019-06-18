@@ -16,7 +16,7 @@ import it.prova.gestionemunicipiospringdatamaven.model.Abitante;
 import it.prova.gestionemunicipiospringdatamaven.model.dto.AbitanteDTO;
 import it.prova.gestionemunicipiospringdatamaven.service.abitante.AbitanteService;
 
-@WebServlet("/ExecuteModificaAbitanteServlet")
+@WebServlet("/abitante/ExecuteModificaAbitanteServlet")
 public class ExecuteModificaAbitanteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

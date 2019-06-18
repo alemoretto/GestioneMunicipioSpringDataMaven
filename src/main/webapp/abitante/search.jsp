@@ -44,8 +44,7 @@
   			<div class="form-group">        
 		      <div class="col-sm-offset-2 col-sm-10">
 		        <button type="submit" class="btn btn-primary btn-md">Effettua Ricerca</button>
-		        <!--  <a href="${pageContext.request.contextPath}/abitante/PrepareInsertAbitanteServlet" class="btn btn-primary btn-md">Inserisci Nuovo Elemento</a> -->
-		        <a href="PrepareInsertAbitanteServlet" class="btn btn-primary btn-md">Inserisci Nuovo Elemento</a>
+		         <a href="${pageContext.request.contextPath}/abitante/PrepareInsertAbitanteServlet" class="btn btn-primary btn-md">Inserisci Nuovo Elemento</a>
 		      </div>
 		    </div>
 		    <div class="form-group">        

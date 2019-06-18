@@ -20,11 +20,8 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th>Id</th>
 					<th>Nome</th>
 					<th>Cognome</th>
-					<th>Eta</th>
-					<th>Residenza</th>
 				</tr>
 			</thead>
 			<tbody>

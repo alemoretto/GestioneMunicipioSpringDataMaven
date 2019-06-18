@@ -16,7 +16,7 @@ import it.prova.gestionemunicipiospringdatamaven.model.Abitante;
 import it.prova.gestionemunicipiospringdatamaven.model.dto.AbitanteDTO;
 import it.prova.gestionemunicipiospringdatamaven.service.abitante.AbitanteService;
 
-@WebServlet("/PrepareModificaAbitanteServlet")
+@WebServlet("/abitante/PrepareModificaAbitanteServlet")
 public class PrepareModificaAbitanteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -42,7 +42,7 @@ public class PrepareModificaAbitanteServlet extends HttpServlet {
 
 		request.setAttribute("abitanteDTO", abitanteDTO);
 
-		request.getRequestDispatcher("/abitante/modificaNuovoAbitante.jsp").forward(request, response);
+		request.getRequestDispatcher("/abitante/modificaAbitante.jsp").forward(request, response);
 
 	}
 

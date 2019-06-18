@@ -25,12 +25,12 @@
 			<h3>Pagina di Modifica Abitante</h3>
 		</div>
 
-		<!--	  <form class="form-horizontal" action="${pageContext.request.contextPath}/abitante/ExecuteInsertAbitanteServlet"
-			method="post"> -->
-		<form class="form-horizontal" action="ExecuteModificaAbitanteServlet"
+		 <form class="form-horizontal" action="${pageContext.request.contextPath}/abitante/ExecuteModificaAbitanteServlet"
 			method="post"> 
+<!-- 		<form class="form-horizontal" action="ExecuteModificaAbitanteServlet" -->
+<!-- 			method="post">  -->
 			
-<%-- 			<input type="hidden" name="idInput" value="${abitanteDTO.id}"> --%>
+			<input type="hidden" name="idInput" value="${abitanteDTO.id}">
 			
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="nomeInputId">Nome:</label>
@@ -108,7 +108,7 @@
 				$( "#municipioInputId" ).autocomplete({
 					 source: function(request, response) {
 					        $.ajax({
-					            url: "SearchMunicipioAjaxServlet",
+					            url: "${pageContext.request.contextPath}/municipio/SearchMunicipioAjaxServlet",
 					            datatype: "json",
 					            data: {
 					                term: request.term,   
